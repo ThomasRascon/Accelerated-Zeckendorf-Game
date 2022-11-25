@@ -1,6 +1,7 @@
 import java.util.*;
+import state.GameState;
 
-public class Main{
+public class WinningPlayer{
 
   static HashMap<Double, GameState> stateMap = new HashMap<>();
   static Queue<GameState> q = new LinkedList<>();
@@ -336,4 +337,4 @@ public class Main{
     return currState.getNumOptions();
   }
   
-}//EOF Main class
+}//EOF WinningPlayer class
