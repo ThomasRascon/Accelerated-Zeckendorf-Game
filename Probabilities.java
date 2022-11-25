@@ -216,8 +216,6 @@ public class Main{
             findChildren(currState);
         }
         
-        System.out.println(stateList.size());
-        
         //Creates multi Zeck map
         for(int i = 0; i < stateList.size(); i++){
           GameState currState = stateList.get(i);
@@ -247,7 +245,7 @@ public class Main{
           }
           else{
             double freq = arr[i]/(double)input3;
-            System.out.printf("%d %f\n", i, freq);
+            System.out.printf("%d, %f\n", i, freq);
           }
         }
 
