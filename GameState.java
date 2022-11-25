@@ -1,6 +1,7 @@
+package state;
 import java.util.*;
 
-class GameState{
+public class GameState{
   //states to reach from the current state
   List<GameState> children = new ArrayList<GameState>();
   List<String> moves = new ArrayList<String>();
