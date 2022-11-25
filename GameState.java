@@ -129,3 +129,47 @@ public class GameState{
     moves.remove(i);
   }
 }//EOF GameState
+
+
+class Moves{
+  static Double getKey(int[] bins){
+    Double key = 0.0;
+    for(int i = 0; i < 45; i++){
+      key += 2100000000*bins[i]*Math.sqrt(i+1);
+    }
+    return key;
+  }//EOF getKey
+  
+  public static int[] split(int n, int[] bins, int m){
+    if(n == 1){
+      bins[0] += m;
+    }
+    else{
+      bins[n-2] += m;
+    }
+    bins[n+1] += m;
+    bins[n] += -2*m;
+    if(bins[n] < 0){
+      return null;
+    }
+    return bins;
+  }//EOF split
+
+  public static int[] combine(int n, int[] bins, int m){
+    if(n == 0){
+      bins[0] += -2*m;
+      if(bins[0]<0){
+        return null;
+      }
+    }
+    else{
+      bins[n-1] -= m;
+      bins[n] -= m;
+      if(bins[n-1]<0 || bins[n]<0){
+        return null;
+      }
+    }
+    bins[n+1] += m;
+    return bins;
+  }//EOF combine
+}//EOF Moves class
